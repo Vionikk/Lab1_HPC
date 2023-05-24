@@ -34,8 +34,14 @@ float integral (float (*f)(float), float xmin, float xmax, float ymin, float yma
   std::cout<<(xmax - xmin)*(ymax - ymin)*density<<std::endl;
 }
 
-
-int main(){
+int main(int argc, char* argv[]){
+  float min=-2;
+  float max=2;
+  if (argc==3)
+  {
+    min=atof(argv[1]);
+    max=atof(argv[2]);
+  }
   std::cout<< "RESULT: " <<std::endl;
-  integral(f,-2,2,0,4);
+  integral(f,min,max,0,4);
 }
